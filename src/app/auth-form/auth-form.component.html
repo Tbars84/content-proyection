@@ -1,0 +1,22 @@
+<div class="ui-g ui-fluid">
+  <form [formGroup]="formExample" (ngSubmit)="onSubmit()">
+    <div class="ui-g-12 ui-g-nopad">
+      <ng-content select="h3"></ng-content>
+    </div>
+    <div class="ui-g-12 ui-g-nopad">
+      <store-form [parent]="formExample"></store-form>
+    </div>
+    <div class="ui-g-12 ui-g-nopad">
+      <selector-form [parent]="formExample" [stockInput]="stockList" (addSelected)="filledStock($event)"></selector-form>
+    </div>
+    <div class="ui-g-12 ui-g-nopad">
+      <stock-form [parent]="formExample" (removeItem)="removedFromInventory($event)"></stock-form>
+    </div>
+    <br />
+    <div class="ui-g-12 ui-g-nopad">
+      <button pButton [disabled]="formExample.invalid" type="submit" label="Submit"></button>
+    </div>
+  </form>
+  <hr />
+  <p-message severity="info" text="{{ formExample.value | json }}"></p-message>
+</div>
