@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "duncan",
+      "country": "australia",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "sarah",
+      "country": "england",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "country": "usa",
+      "password": "123"
+    },
+    {
+      "username": "test2",
+      "password": "123",
+      "id": 4
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "job": "Plumber"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "job": "developer"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "job": "Manager"
+    }
+  ],
+  "products": [
+
+    { "label": "Select a product",  "value": null },
+    { "label": "Huawei", 
+      "value": { 
+          "id": 1, 
+          "brand":"Huawei",  
+          "type" : "P20", 
+          "code": "P20" } },
+    { "label": "Motorolla", 
+      "value": { 
+          "id": 2, 
+          "brand":"Motorolla", 
+          "type" : "Z play", 
+          "code": "ZPLAY" } },
+    { "label": "Iphone", 
+      "value": {
+          "id": 3, 
+          "brand": "Iphone", 
+          "type" : "Iphone XS", 
+          "code": "XS" } },
+    { "label": "Samsung", 
+      "value": { 
+          "id": 4, 
+          "brand":"Samsung", 
+          "type" : "Galaxy S10", 
+          "code": "S10" 
+      }
+    }
+  ]
+}

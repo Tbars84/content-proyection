@@ -27,7 +27,11 @@ export class AuthFormComponent implements OnInit , AfterContentInit {
     private _fb: FormBuilder) {}
   ngOnInit() {
     // LIST OF PRODUCTS INTO SELECT INPUT INFO FROM SERVICE
-    this.stockList = this._stockSrv.getAll();
+    //this.stockList 
+    this._stockSrv.getAll()
+      .subscribe((data:StockList[] )=>{
+        this.stockList = data;
+      })
   }
   ngAfterContentInit(){}
 
