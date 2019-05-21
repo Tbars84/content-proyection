@@ -29,9 +29,7 @@ export class AuthFormComponent implements OnInit , AfterContentInit {
     // LIST OF PRODUCTS INTO SELECT INPUT INFO FROM SERVICE
     //this.stockList 
     this._stockSrv.getAll()
-      .subscribe((data:StockList[] )=>{
-        this.stockList = data;
-      })
+      .subscribe( (data:StockList[]) => this.stockList = data)
   }
   ngAfterContentInit(){}
 

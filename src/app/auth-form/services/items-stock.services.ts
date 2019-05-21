@@ -21,12 +21,10 @@ export class StockData {
     //   { label: 'Iphone', value: { id: 3,  brand:'Iphone', type : 'Iphone XS', code: 'XS' } },
     //   { label: 'Samsung', value: { id: 4,  brand:'Samsung', type : 'Galaxy S10', code: 'S10' } },
     // ];
+    // RETURN THE ARRAY FROM HTTP API
     return this._http.get<StockList[]>(`${this.API_URL}/products`)
       .pipe(
-        map((res)=>{
-          return res
-        })
+        map(res=> res)
       )
   }
-
 }
