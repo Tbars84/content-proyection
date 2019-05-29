@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {SpinnerModule} from 'primeng/spinner';
+import {TreeModule} from 'primeng/tree';
 
 // COMPONENTS
 import { AuthFormComponent } from './auth-form/auth-form.component';
@@ -17,8 +18,10 @@ import { AuthFormRemember } from './auth-form/components/auth-remember.component
 import { SelectorComponent } from './auth-form/components/selector-form.component';
 import { StoreComponent } from './auth-form/components/store-form.component';
 import { StockComponent } from './auth-form/components/stock-form.component';
+import { MapComponentComponent } from './map-component/map-component.component';
 // SERVICES
 import { StockData } from './auth-form/services/items-stock.services';
+import { AppsData } from './map-component/services/items-stock.services';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { StockData } from './auth-form/services/items-stock.services';
     AuthFormRemember,
     SelectorComponent,
     StoreComponent,
-    StockComponent
+    StockComponent,
+    MapComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +42,10 @@ import { StockData } from './auth-form/services/items-stock.services';
     ButtonModule,
     MessagesModule,
     MessageModule,
-    SpinnerModule
+    SpinnerModule,
+    TreeModule
   ],
-  providers: [StockData],
+  providers: [StockData , AppsData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

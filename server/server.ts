@@ -3,10 +3,26 @@ const server = jsonServer.create();
 const router = jsonServer.router('server/db.json');
 const middlewares = jsonServer.defaults();
 const db = require('./db.json');
+//const db = require('./aplication.json');
 const fs = require('fs');
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
+
+
+server.post('/application', (req, res, next) => {
+  const apps = readApps();
+
+  const app = apps.filter(
+    u => u.username === req.body.username && u.password === req.body.password
+  )[0];
+  if (app) {
+    res.send({ ...formatUser(app), token: checkIfAdmin(app) });
+  } else {
+    res.status(401).send('Incorrect username or password');
+  }
+});
+
 
 server.post('/login', (req, res, next) => { 
   const users = readUsers();
@@ -72,4 +88,10 @@ function readUsers() {
   const dbRaw = fs.readFileSync('./server/db.json');  
   const users = JSON.parse(dbRaw).users
   return users;
+}
+
+function readApps() {
+  const dbRaw = fs.readFileSync('./server/db.json');
+  const apps = JSON.parse(dbRaw).apps
+  return apps;
 }

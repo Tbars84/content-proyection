@@ -1,0 +1,61 @@
+{
+	"aplicacion": {
+		"nombre": "Seguridad-Auditoria",
+		"titulo": "Seguridad y Auditoria",
+		"descripcion": "Administracion de seguridad",
+		"procesos": [
+			{
+				"nombre": "Seguridad",
+				"titulo": "Seguridad",
+				"modulos": [
+					{
+						"nombre": "SolicitudModule",
+						"titulo": "Solicitud",
+						"acciones": [ 
+							{
+								"nombre": "verSolicitudes",
+								"titulo": "Ver Solicitudes"
+							}, 
+							{
+								"nombre": "crearSolicitud",
+								"titulo": "Crear Solicitud",
+								"elementos": [ "usuario", "nombrePersona" ]
+							},
+							{
+								"nombre": "modificarSolicitud",
+								"titulo": "Actualizar Solicitudes"
+							}
+						]
+					},
+					{
+						"nombre": "RolesModule",
+						"titulo": "Roles",
+						"acciones": [
+							{
+								"nombre": "verRoles",
+								"titulo": "Ver Roles"
+							}, 
+							{
+								"nombre": "verDetalleRol",
+								"titulo": "Ver Detalle Rol",
+								"elementos": [ "nombreRol", "descripcionRol" ]
+							},
+							{
+								"nombre": "crearRol",
+								"titulo": "Crear Rol"
+							},
+							{
+								"nombre": "modificarRol",
+								"titulo": "Actualizar Rol"
+							},
+							{
+								"nombre": "modificarRol",
+								"titulo": "Actualizar Rol"
+							}
+						 ]
+					}
+				]
+			}
+		]
+	}
+}
