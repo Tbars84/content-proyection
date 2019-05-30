@@ -17,10 +17,13 @@ export class MapComponentComponent implements OnInit {
   constructor(public _srvApps: AppsData) { }
 
   ngOnInit() {
-    this._srvApps.getAll().subscribe(appData => {
-      this.filesData = appData.map(app => {
+    this._srvApps.getAll().subscribe(
+      (appData) => {
+        this.filesData = appData.map(app => {
         return this.convertAppsToTree(app)
-      })
+      }),
+      console.error();
+      
     })
   }
 
@@ -56,7 +59,6 @@ export class MapComponentComponent implements OnInit {
     let newdataConvert = this.dataConvert.filter(objData => objData !==  obj)
     this.dataConvert = []
     this.dataConvert = newdataConvert; 
-    alert()
   }
 }
 

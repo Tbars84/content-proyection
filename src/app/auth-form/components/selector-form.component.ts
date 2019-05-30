@@ -35,5 +35,10 @@ export class SelectorComponent implements OnInit {
 
   addToStock() {
     this.addSelected.emit(this.parent.get('selector').value)
+    this.parent.get('selector').reset({
+      product: '',
+      quantity: 10
+    })
+    // -----> YOU CAN ALSO USE SETVALUE AND PATCHVALUE TO RESET FORMGROUPS
   }
 }

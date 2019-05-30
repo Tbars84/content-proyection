@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient    } from '@angular/common/http'
-import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { Observable , pipe , throwError , of } from 'rxjs';
+import {map , catchError } from 'rxjs/operators';
 
 
 @Injectable()
@@ -14,7 +14,8 @@ export class AppsData {
   getAll(): Observable<any> {
     return this._http.get<any>(`${this.API_URL}/applications`)
       .pipe(
-        map(res=> res)
+        map(res => res),
+        catchError(catchError(val => of(`I caught: ${val}`)))
       )
   }
 }
